@@ -19,6 +19,9 @@
     <Filter Include="Source Files\Day1">
       <UniqueIdentifier>{bcb17dec-5ca6-4add-b683-11f876adb1cc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Day3">
+      <UniqueIdentifier>{04955c37-4ba5-4f77-83fd-215dbb7ca392}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AllDays.cpp">
@@ -30,6 +33,9 @@
     <ClCompile Include="Day1\Trebuchet.cpp">
       <Filter>Source Files\Day1</Filter>
     </ClCompile>
+    <ClCompile Include="Day3\GearRatios.cpp">
+      <Filter>Source Files\Day3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day2\CubeConundrum.h">
@@ -37,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="Day1\Trebuchet.h">
       <Filter>Source Files\Day1</Filter>
+    </ClInclude>
+    <ClInclude Include="Day3\GearRatios.h">
+      <Filter>Source Files\Day3</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

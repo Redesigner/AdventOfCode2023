@@ -2,6 +2,7 @@
 
 #include "Day1/Trebuchet.h"
 #include "Day2/CubeConundrum.h"
+#include "Day3/GearRatios.h"
 
 int main()
 {
@@ -29,6 +30,11 @@ int main()
 			std::printf("Total IDs: %i\n", CubeConundrum::get_total_ids());
 			std::printf("Power sum: %i\n", CubeConundrum::get_powers());
 		}break;
+		case 3:
+		{
+			std::printf("Part numbers sum: %i\n", GearRatios::get());
+			std::printf("Gear ratios sum: %i\n", GearRatios::getGears());
+		}
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");

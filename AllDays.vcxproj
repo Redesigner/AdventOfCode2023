@@ -131,10 +131,12 @@
     <ClCompile Include="AllDays.cpp" />
     <ClCompile Include="Day1\Trebuchet.cpp" />
     <ClCompile Include="Day2\CubeConundrum.cpp" />
+    <ClCompile Include="Day3\GearRatios.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day1\Trebuchet.h" />
     <ClInclude Include="Day2\CubeConundrum.h" />
+    <ClInclude Include="Day3\GearRatios.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
