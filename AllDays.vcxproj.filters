@@ -36,6 +36,12 @@
     <ClCompile Include="Day3\GearRatios.cpp">
       <Filter>Source Files\Day3</Filter>
     </ClCompile>
+    <ClCompile Include="Day4\ScratchCards.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day2\CubeConundrum.h">
@@ -46,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="Day3\GearRatios.h">
       <Filter>Source Files\Day3</Filter>
+    </ClInclude>
+    <ClInclude Include="Day4\ScratchCards.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Common.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

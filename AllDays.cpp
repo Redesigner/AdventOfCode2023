@@ -1,14 +1,16 @@
 #include <iostream>
+#include <chrono>
 
 #include "Day1/Trebuchet.h"
 #include "Day2/CubeConundrum.h"
 #include "Day3/GearRatios.h"
+#include "Day4/ScratchCards.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 0;
+	int chosenDay = 4;
 	while (chosenDay >= 0)
 	{
 		std::cin >> chosenDay;
@@ -18,23 +20,58 @@ int main()
 			return 0;
 		}
 
+		std::chrono::system_clock::time_point startTime;
+		std::chrono::system_clock::time_point endTime;
 		switch (chosenDay)
 		{
 		case 1:
 		{
+			startTime = std::chrono::system_clock::now();
 			std::printf("Sum of first calibration values: %i\n", Trebuchet::get(false));
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+
+			startTime = std::chrono::system_clock::now();
 			std::printf("Sum of second calibration values: %i\n", Trebuchet::get(true));
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+
 		}break;
 		case 2:
 		{
+			startTime = std::chrono::system_clock::now();
 			std::printf("Total IDs: %i\n", CubeConundrum::get_total_ids());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+
 			std::printf("Power sum: %i\n", CubeConundrum::get_powers());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
 		}break;
 		case 3:
 		{
+			startTime = std::chrono::system_clock::now();
 			std::printf("Part numbers sum: %i\n", GearRatios::get());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+
+			startTime = std::chrono::system_clock::now();
 			std::printf("Gear ratios sum: %i\n", GearRatios::getGears());
-		}
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+		}break;
+		case 4:
+		{
+			startTime = std::chrono::system_clock::now();
+			std::printf("Scratch cards value: %i\n", ScratchCards::get());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+
+			startTime = std::chrono::system_clock::now();
+			std::printf("Scratch cards total: %i\n", ScratchCards::getCards());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+		}break;
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");

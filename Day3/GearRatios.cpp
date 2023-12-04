@@ -52,7 +52,7 @@ int GearRatios::get()
                     newChar = grid->getCharacter(newX, newY);
                     charAsInt = charToInt(newChar);
                 }
-                std::printf("'%c' (%i, %i) : %i\n", c, offset.first, offset.second, currentInt);
+                // std::printf("'%c' (%i, %i) : %i\n", c, offset.first, offset.second, currentInt);
                 total += currentInt;
             }
             return total;
@@ -126,11 +126,11 @@ int GearRatios::getGears()
                 }
                 numParts++;
                 total *= currentInt;
-                printf("Gear found part %i\n", currentInt);
+                // printf("Gear found part %i\n", currentInt);
             }
             if (numParts != 2)
             {
-                std::printf("Gear  at (%i, %i) has % i gears and is invalid\n", x, y, numParts);
+                // std::printf("Gear  at (%i, %i) has % i gears and is invalid\n", x, y, numParts);
                 return 0;
             }
             return total;
