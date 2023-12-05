@@ -5,12 +5,13 @@
 #include "Day2/CubeConundrum.h"
 #include "Day3/GearRatios.h"
 #include "Day4/ScratchCards.h"
+#include "Day5/Fertilizer.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 4;
+	int chosenDay = 0;
 	while (chosenDay >= 0)
 	{
 		std::cin >> chosenDay;
@@ -72,6 +73,18 @@ int main()
 			endTime = std::chrono::system_clock::now();
 			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
 		}break;
+		case 5:
+		{
+			startTime = std::chrono::system_clock::now();
+			std::printf("Maps value: %lld\n", Fertilizer::get());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+
+			startTime = std::chrono::system_clock::now();
+			std::printf("Maps value: %lld\n", Fertilizer::getRange());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+		}
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");

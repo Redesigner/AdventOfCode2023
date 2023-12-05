@@ -34,3 +34,6 @@
 # Visual Studio files
 /x64
 /.vs
+
+# AoC Input files
+**/input.txt

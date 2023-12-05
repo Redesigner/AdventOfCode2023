@@ -134,6 +134,7 @@
     <ClCompile Include="Day2\CubeConundrum.cpp" />
     <ClCompile Include="Day3\GearRatios.cpp" />
     <ClCompile Include="Day4\ScratchCards.cpp" />
+    <ClCompile Include="Day5\Fertilizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Common.h" />
@@ -141,6 +142,7 @@
     <ClInclude Include="Day2\CubeConundrum.h" />
     <ClInclude Include="Day3\GearRatios.h" />
     <ClInclude Include="Day4\ScratchCards.h" />
+    <ClInclude Include="Day5\Fertilizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
