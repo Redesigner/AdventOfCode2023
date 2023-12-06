@@ -6,12 +6,13 @@
 #include "Day3/GearRatios.h"
 #include "Day4/ScratchCards.h"
 #include "Day5/Fertilizer.h"
+#include "Day6/Races.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 0;
+	int chosenDay = 6;
 	while (chosenDay >= 0)
 	{
 		std::cin >> chosenDay;
@@ -82,6 +83,18 @@ int main()
 
 			startTime = std::chrono::system_clock::now();
 			std::printf("Maps value: %lld\n", Fertilizer::getRange());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+		}
+		case 6:
+		{
+			startTime = std::chrono::system_clock::now();
+			printf("Race values %i\n", Races::get());
+			endTime = std::chrono::system_clock::now();
+			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+
+			startTime = std::chrono::system_clock::now();
+			printf("Single race value %i\n", Races::getPart2());
 			endTime = std::chrono::system_clock::now();
 			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
 		}

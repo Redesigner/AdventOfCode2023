@@ -160,12 +160,10 @@ int64 Fertilizer::getRange()
                 if (range.inOutputRange(mappedSeed))
                 {
                     mappedSeed = range.reverseMap(mappedSeed);
-                    // printf("Map %i: mapping seed to %i\n", i, seed);
                     mapped = true;
                 }
             }
         }
-        // printf("Seed %lld, mapped from %lld\n", mappedSeed, seed);
         for (SeedRange& seedRange : seeds)
         {
             if (seedRange.inRange(mappedSeed))
@@ -173,7 +171,7 @@ int64 Fertilizer::getRange()
                 return seed;
             }
         }
-        // printf("%lld / %lld\n", mappedSeed, max);
+        // printf("%lld\n", seed);
     }
     return -1;
 }
