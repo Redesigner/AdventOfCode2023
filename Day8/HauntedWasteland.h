@@ -1,12 +1,14 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <map>
 
 namespace HauntedWasteland
 {
 	struct Location
 	{
-		Location(std::string string);
+		Location(const std::string& string);
 
 		bool operator ==(const Location& other) const;
 		bool operator >(const Location& other) const;
@@ -28,4 +30,12 @@ namespace HauntedWasteland
 	};
 
 	int get();
+	int64_t get2();
+
+	int getShortestValue(const Location& startingLocation, const std::string directionString, const std::map<Location, Node>& map);
+
+	int64_t GCD(const int& a, const int& b);
+	int64_t GCD(const std::vector<int>& values);
+
+	int64_t LCM(const std::vector<int>& values);
 }

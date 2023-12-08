@@ -17,7 +17,7 @@ int main()
 	int chosenDay = 8;
 	while (chosenDay >= 0)
 	{
-		// std::cin >> chosenDay;
+		std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
@@ -107,7 +107,7 @@ int main()
 		case 8:
 		{
 			printf("Map values: %i\n", HauntedWasteland::get());
-			chosenDay = -1;
+			printf("Map values part 2: %ll\n", HauntedWasteland::get2());
 		}break;
 		default:
 		{
