@@ -7,15 +7,17 @@
 #include "Day4/ScratchCards.h"
 #include "Day5/Fertilizer.h"
 #include "Day6/Races.h"
+#include "Day7/CamelCards.h"
+#include "Day8/HauntedWasteland.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 6;
+	int chosenDay = 8;
 	while (chosenDay >= 0)
 	{
-		std::cin >> chosenDay;
+		// std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
@@ -97,7 +99,16 @@ int main()
 			printf("Single race value %i\n", Races::getPart2());
 			endTime = std::chrono::system_clock::now();
 			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
-		}
+		}break;
+		case 7:
+		{
+			printf("Card values: %i\n", CamelCards::get());
+		}break;
+		case 8:
+		{
+			printf("Map values: %i\n", HauntedWasteland::get());
+			chosenDay = -1;
+		}break;
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");
