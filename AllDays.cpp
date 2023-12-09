@@ -9,12 +9,13 @@
 #include "Day6/Races.h"
 #include "Day7/CamelCards.h"
 #include "Day8/HauntedWasteland.h"
+#include "Day9/MirageMaintenance.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 8;
+	int chosenDay = 0;
 	while (chosenDay >= 0)
 	{
 		std::cin >> chosenDay;
@@ -107,7 +108,12 @@ int main()
 		case 8:
 		{
 			printf("Map values: %i\n", HauntedWasteland::get());
-			printf("Map values part 2: %ll\n", HauntedWasteland::get2());
+			printf("Map values part 2: %lld\n", HauntedWasteland::get2());
+		}break;
+		case 9:
+		{
+			printf("Extrapolated sum: %i\n", MirageMaintenance::get());
+			printf("Extrapolated historical sum: %i\n", MirageMaintenance::get2());
 		}break;
 		default:
 		{

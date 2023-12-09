@@ -54,6 +54,9 @@
     <ClCompile Include="Day8\HauntedWasteland.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day9\MirageMaintenance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day2\CubeConundrum.h">
@@ -81,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day8\HauntedWasteland.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day9\MirageMaintenance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="AllDays.cpp" />
     <ClCompile Include="Common\Common.cpp" />
+    <ClCompile Include="Day9\MirageMaintenance.cpp" />
     <ClCompile Include="Day1\Trebuchet.cpp" />
     <ClCompile Include="Day2\CubeConundrum.cpp" />
     <ClCompile Include="Day3\GearRatios.cpp" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Common.h" />
+    <ClInclude Include="Day9\MirageMaintenance.h" />
     <ClInclude Include="Day1\Trebuchet.h" />
     <ClInclude Include="Day2\CubeConundrum.h" />
     <ClInclude Include="Day3\GearRatios.h" />
