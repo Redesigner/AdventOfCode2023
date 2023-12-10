@@ -10,15 +10,16 @@
 #include "Day7/CamelCards.h"
 #include "Day8/HauntedWasteland.h"
 #include "Day9/MirageMaintenance.h"
+#include "Day10/PipeMaze.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 0;
+	int chosenDay = 10;
 	while (chosenDay >= 0)
 	{
-		std::cin >> chosenDay;
+		//std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
@@ -114,6 +115,12 @@ int main()
 		{
 			printf("Extrapolated sum: %i\n", MirageMaintenance::get());
 			printf("Extrapolated historical sum: %i\n", MirageMaintenance::get2());
+		}break;
+		case 10:
+		{
+			printf("Pipe maze distance: %i\n", PipeMaze::get());
+			printf("Pipe maze area: %i\n", PipeMaze::get2());
+			chosenDay = 0;
 		}break;
 		default:
 		{
