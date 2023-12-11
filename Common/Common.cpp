@@ -19,3 +19,18 @@ std::vector<std::string> Common::splitString(const std::string string, char deli
     } while (delimiterIndex != std::string::npos);
     return result;
 }
+
+const bool Vector2::operator==(const Vector2& otherVector) const
+{
+    return x == otherVector.x && y == otherVector.y;
+}
+
+Vector2 Vector2::operator+(const Vector2& otherVector) const
+{
+    return Vector2(x + otherVector.x, y + otherVector.y);
+}
+
+Vector2 Vector2::operator-(const Vector2& otherVector) const
+{
+    return Vector2(x - otherVector.x, y - otherVector.y);
+}

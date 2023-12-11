@@ -11,12 +11,13 @@
 #include "Day8/HauntedWasteland.h"
 #include "Day9/MirageMaintenance.h"
 #include "Day10/PipeMaze.h"
+#include "Day11/CosmicExpansion.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 10;
+	int chosenDay = 11;
 	while (chosenDay >= 0)
 	{
 		//std::cin >> chosenDay;
@@ -120,8 +121,14 @@ int main()
 		{
 			printf("Pipe maze distance: %i\n", PipeMaze::get());
 			printf("Pipe maze area: %i\n", PipeMaze::get2());
-			chosenDay = 0;
 		}break;
+		case 11:
+		{
+			printf("Map distance sum %i\n", CosmicExpansion::get());
+			printf("Map distance sum %lld\n", CosmicExpansion::get2());
+			chosenDay = 0;
+			break;
+		}
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");
