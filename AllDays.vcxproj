@@ -132,6 +132,7 @@
     <ClCompile Include="Common\Common.cpp" />
     <ClCompile Include="Day10\PipeMaze.cpp" />
     <ClCompile Include="Day11\CosmicExpansion.cpp" />
+    <ClCompile Include="Day12\HotSprings.cpp" />
     <ClCompile Include="Day9\MirageMaintenance.cpp" />
     <ClCompile Include="Day1\Trebuchet.cpp" />
     <ClCompile Include="Day2\CubeConundrum.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Common\Common.h" />
     <ClInclude Include="Day10\PipeMaze.h" />
     <ClInclude Include="Day11\CosmicExpansion.h" />
+    <ClInclude Include="Day12\HotSprings.h" />
     <ClInclude Include="Day9\MirageMaintenance.h" />
     <ClInclude Include="Day1\Trebuchet.h" />
     <ClInclude Include="Day2\CubeConundrum.h" />
