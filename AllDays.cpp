@@ -22,7 +22,7 @@ int main()
 	int chosenDay = 13;
 	while (chosenDay >= 0)
 	{
-		//std::cin >> chosenDay;
+		std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
@@ -131,13 +131,13 @@ int main()
 		}break;
 		case 12:
 		{
-			printf("Hot springs possibilities: %llu\n", HotSprings::get());
+			printf("Hot springs possibilities: %i\n", HotSprings::get());
 			printf("Hot springs possibilities: %llu\n", HotSprings::get2());
 		}break;
 		case 13:
 		{
+			printf("Mirror sum: %llu\n", LavaIsland::get());
 			printf("Mirror sum: %llu\n", LavaIsland::get2());
-			chosenDay = 0;
 		}break;
 		default:
 		{

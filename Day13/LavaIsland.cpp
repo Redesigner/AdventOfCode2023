@@ -16,40 +16,36 @@ int64_t LavaIsland::get()
 		return -1;
 	}
 
-	vector<vector<string>> maps;
+	vector<Map> maps;
 
 	string line;
-	vector<string> map;
+	vector<string> mapString;
 	while (getline(file, line))
 	{
 		if (line.empty())
 		{
-			maps.push_back(map);
-			map.clear();
+			maps.emplace_back(mapString);
+			mapString.clear();
 			continue;
 		}
-		map.push_back(line);
+		mapString.push_back(line);
 	}
-	maps.push_back(map);
+	maps.emplace_back(mapString);
 
 	int64_t sum = 0;
-	for (const vector<string>& reflectionMap : maps)
+	for (Map& map : maps)
 	{
-		int value = getMirroredX(reflectionMap);
-		if (value == 0)
-		{
-			value = getMirroredY(reflectionMap) * 100;
-		}
-		sum += value;
+		int value = map.getValue();
 		printf("%i\n", value);
+		sum += value;
 	}
 	return sum;
 }
 
 int64_t LavaIsland::get2()
 {
-	// fstream file = fstream("Day13/input.txt", ios::in);
-	fstream file = fstream("Day13/test.txt", ios::in);
+	fstream file = fstream("Day13/input.txt", ios::in);
+	// fstream file = fstream("Day13/test.txt", ios::in);
 
 	if (!file.is_open())
 	{
@@ -72,143 +68,15 @@ int64_t LavaIsland::get2()
 	}
 	maps.emplace_back(mapString);
 
+	int64_t sum = 0;
 	for (Map& map : maps)
 	{
+		map.getValue();
+		int value = map.getSmudgedValue();
+		printf("%i\n", value);
+		sum += value;
 	}
-	return -1;
-}
-
-std::string LavaIsland::getColumn(const vector<string>& map, int x)
-{
-	string columnResult;
-	for (const string& row : map)
-	{
-		columnResult.push_back(row[x]);
-	}
-	return columnResult;
-}
-
-bool LavaIsland::mirrorsColumns(const std::vector<std::string>& map, int x)
-{
-	int left = x;
-	int right = x + 1;
-
-	while (true)
-	{
-		if (left < 0)
-		{
-			return true;
-		}
-		if (right >= map[0].size())
-		{
-			return true;
-		}
-		if (getColumn(map, left) != getColumn(map, right))
-		{
-			return false;
-		}
-		left--;
-		right++;
-	}
-}
-
-int LavaIsland::getMirroredX(const std::vector<std::string>& map)
-{
-	int width = map[0].size();
-	for (int i = 0; i < width - 1; ++i)
-	{
-		if (mirrorsColumns(map, i))
-		{
-			return i + 1;
-		}
-	}
-	return 0;
-}
-
-
-bool LavaIsland::mirrorsRows(const std::vector<std::string>& map, int y)
-{
-	int top = y;
-	int bottom = y + 1;
-
-	while (true)
-	{
-		if (top < 0)
-		{
-			return true;
-		}
-		if (bottom >= map.size())
-		{
-			return true;
-		}
-		if (map[top] != map[bottom])
-		{
-			return false;
-		}
-		top--;
-		bottom++;
-	}
-}
-
-int LavaIsland::getMirroredY(const std::vector<std::string>& map)
-{
-	int height = map.size();
-	for (int i = 0; i < height - 1; ++i)
-	{
-		if (mirrorsRows(map, i))
-		{
-			return i + 1;
-		}
-	}
-	return 0;
-}
-
-void LavaIsland::remap(pair<vector<string>, int>& mapValue)
-{
-	vector<string>& map = mapValue.first;
-	const int oldValue = mapValue.second;
-
-	for (int y = 0; y < map.size(); ++y)
-	{
-		string& row = map[y];
-		for (int x = 0; x < row.size(); ++x)
-		{
-			char& c = row[x];
-			c = c == '.' ? '#' : '.';
-
-			/*bool containsOldReflection = false;
-			if (oldValue > 100)
-			{
-				int previousReflectionY = oldValue / 100 - 1;
-				containsOldReflection = mirrorsRows(map, previousReflectionY);
-			}
-			else
-			{
-				int previousReflectionX = oldValue - 1;
-				containsOldReflection = mirrorsColumns(map, previousReflectionX);
-			}
-			if (containsOldReflection)
-			{
-				c = c == '.' ? '#' : '.';
-				continue;
-			} */
-			int mirroredX = getMirroredX(map);
-			if (mirroredX != 0 && mirroredX != oldValue)
-			{
-				printf("Smudge found at (%i, %i)\n", x + 1, y + 1);
-				mapValue.second = mirroredX;
-				return;
-			}
-			int mirroredY = getMirroredY(map);
-			if (mirroredY != 0 && mirroredY * 100 != oldValue)
-			{
-				printf("Smudge found at (%i, %i)\n", x + 1, y + 1);
-				mapValue.second = mirroredY * 100;
-				return;
-			}
-			c = c == '.' ? '#' : '.';
-		}
-	}
+	return sum;
 }
 
 LavaIsland::Map::Map(vector<string> lines)
@@ -240,25 +108,136 @@ string LavaIsland::Map::toString() const
 	return result;
 }
 
-void LavaIsland::Map::findXReflection()
+bool LavaIsland::Map::findXReflection()
 {
+	int width = map[0].size();
+	for (int i = 0; i < width - 1; ++i)
+	{
+		if (i == reflectionX)
+		{
+			continue;
+		}
+		if (validXReflection(i))
+		{
+			reflectionX = i;
+			return true;
+		}
+	}
+	return false;
 }
 
-void LavaIsland::Map::findYReflection()
+bool LavaIsland::Map::findYReflection()
 {
+	int height = map.size();
+	for (int i = 0; i < height - 1; ++i)
+	{
+		if (i == reflectionY)
+		{
+			continue;
+		}
+		if (validYReflection(i))
+		{
+			reflectionY = i;
+			return true;
+		}
+	}
+	return false;
 }
 
 bool LavaIsland::Map::validXReflection(int x) const
 {
-	return false;
+	int left = x;
+	int right = x + 1;
+
+	while (true)
+	{
+		if (left < 0)
+		{
+			return true;
+		}
+		if (right >= map[0].size())
+		{
+			return true;
+		}
+		if (getColumn(left) != getColumn(right))
+		{
+			return false;
+		}
+		left--;
+		right++;
+	}
 }
 
 bool LavaIsland::Map::validYReflection(int y) const
 {
-	return false;
+	int top = y;
+	int bottom = y + 1;
+
+	while (true)
+	{
+		if (top < 0)
+		{
+			return true;
+		}
+		if (bottom >= map.size())
+		{
+			return true;
+		}
+		if (map[top] != map[bottom])
+		{
+			return false;
+		}
+		top--;
+		bottom++;
+	}
 }
 
-std::vector<bool> LavaIsland::Map::getColumn(int x) const
+vector<bool> LavaIsland::Map::getColumn(int x) const
 {
-	return std::vector<bool>();
+	vector<bool> result;
+
+	for (const vector<bool>& data : map)
+	{
+		result.push_back(data[x]);
+	}
+	return result;
+}
+
+int LavaIsland::Map::getValue()
+{
+	findXReflection();
+	if (reflectionX == -1)
+	{
+		findYReflection();
+		return (reflectionY + 1) * 100;
+	}
+	else
+	{
+		return reflectionX + 1;
+	}
+}
+
+int LavaIsland::Map::getSmudgedValue()
+{
+	for (int y = 0; y < map.size(); ++y)
+	{
+		vector<bool>& currentLine = map[y];
+		for (int x = 0; x < currentLine.size(); ++x)
+		{
+			currentLine[x] = !currentLine[x];
+
+			if (findXReflection())
+			{
+				printf("Found smudge at (%i, %i)\n", x, y);
+				return reflectionX + 1;
+			}
+			if (findYReflection())
+			{
+				printf("Found smudge at (%i, %i)\n", x, y);
+				return (reflectionY + 1) * 100;
+			}
+			currentLine[x] = !currentLine[x];
+		}
+	}
+	return -1;
 }
