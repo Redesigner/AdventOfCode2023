@@ -13,12 +13,13 @@
 #include "Day10/PipeMaze.h"
 #include "Day11/CosmicExpansion.h"
 #include "Day12/HotSprings.h"
+#include "Day13/LavaIsland.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 12;
+	int chosenDay = 13;
 	while (chosenDay >= 0)
 	{
 		//std::cin >> chosenDay;
@@ -130,7 +131,12 @@ int main()
 		}break;
 		case 12:
 		{
-			printf("Hot springs possibilities: %i\n", HotSprings::get2());
+			printf("Hot springs possibilities: %llu\n", HotSprings::get());
+			printf("Hot springs possibilities: %llu\n", HotSprings::get2());
+		}break;
+		case 13:
+		{
+			printf("Mirror sum: %llu\n", LavaIsland::get2());
 			chosenDay = 0;
 		}break;
 		default:

@@ -6,6 +6,9 @@
 namespace Common
 {
 	std::vector<std::string> splitString(const std::string string, char delimiter);
+
+	bool stringContains(const std::string& string, char c);
+	bool stringContains(std::string_view string, char c);
 }
 
 struct Vector2

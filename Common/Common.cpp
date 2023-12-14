@@ -20,6 +20,16 @@ std::vector<std::string> Common::splitString(const std::string string, char deli
     return result;
 }
 
+bool Common::stringContains(const std::string& string, char c)
+{
+    return string.find(c) != std::string::npos;
+}
+
+bool Common::stringContains(std::string_view string, char c)
+{
+    return string.find(c) != std::string::npos;
+}
+
 const bool Vector2::operator==(const Vector2& otherVector) const
 {
     return x == otherVector.x && y == otherVector.y;

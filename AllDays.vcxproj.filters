@@ -66,6 +66,9 @@
     <ClCompile Include="Day12\HotSprings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day13\LavaIsland.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day2\CubeConundrum.h">
@@ -105,6 +108,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day12\HotSprings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day13\LavaIsland.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
