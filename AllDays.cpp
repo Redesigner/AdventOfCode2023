@@ -14,15 +14,16 @@
 #include "Day11/CosmicExpansion.h"
 #include "Day12/HotSprings.h"
 #include "Day13/LavaIsland.h"
+#include "Day14/ParabolicReflector.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 13;
+	int chosenDay = 14;
 	while (chosenDay >= 0)
 	{
-		std::cin >> chosenDay;
+		//std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
@@ -139,9 +140,14 @@ int main()
 			printf("Mirror sum: %llu\n", LavaIsland::get());
 			printf("Mirror sum: %llu\n", LavaIsland::get2());
 		}break;
+		case 14:
+		{
+			printf("Parabolic reflector sum: %llu\n", ParabolicReflector::get());
+		}
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");
+			chosenDay = 0;
 		}break;
 		}
 	}
