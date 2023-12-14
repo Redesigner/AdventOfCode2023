@@ -36,4 +36,5 @@
 /.vs
 
 # AoC Input files
-**/input.txt
+**/input*
+**/test*

@@ -36,7 +36,7 @@ int64_t LavaIsland::get()
 	for (Map& map : maps)
 	{
 		int value = map.getValue();
-		printf("%i\n", value);
+		// printf("%i\n", value);
 		sum += value;
 	}
 	return sum;
@@ -228,12 +228,12 @@ int LavaIsland::Map::getSmudgedValue()
 
 			if (findXReflection())
 			{
-				printf("Found smudge at (%i, %i)\n", x, y);
+				// printf("Found smudge at (%i, %i)\n", x, y);
 				return reflectionX + 1;
 			}
 			if (findYReflection())
 			{
-				printf("Found smudge at (%i, %i)\n", x, y);
+				// printf("Found smudge at (%i, %i)\n", x, y);
 				return (reflectionY + 1) * 100;
 			}
 			currentLine[x] = !currentLine[x];
