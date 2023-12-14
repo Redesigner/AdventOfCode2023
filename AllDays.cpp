@@ -142,12 +142,12 @@ int main()
 		}break;
 		case 14:
 		{
-			printf("Parabolic reflector sum: %llu\n", ParabolicReflector::get());
-		}
+			printf("Parabolic reflector sum: %llu\n", ParabolicReflector::get2());
+			chosenDay = 0;
+		}break;
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");
-			chosenDay = 0;
 		}break;
 		}
 	}
