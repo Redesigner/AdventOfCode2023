@@ -15,12 +15,13 @@
 #include "Day12/HotSprings.h"
 #include "Day13/LavaIsland.h"
 #include "Day14/ParabolicReflector.h"
+#include "Day15/LensLibrary.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 14;
+	int chosenDay = 15;
 	while (chosenDay >= 0)
 	{
 		//std::cin >> chosenDay;
@@ -142,9 +143,14 @@ int main()
 		}break;
 		case 14:
 		{
+			printf("Parabolic reflector sum: %llu\n", ParabolicReflector::get());
 			printf("Parabolic reflector sum: %llu\n", ParabolicReflector::get2());
-			chosenDay = 0;
 		}break;
+		case 15:
+		{
+			printf("Hashed instruction sequence: %lld\n", LensLibrary::get());
+			chosenDay = 0;
+		}
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");
