@@ -148,7 +148,8 @@ int main()
 		}break;
 		case 15:
 		{
-			printf("Hashed instruction sequence: %lld\n", LensLibrary::get());
+			// printf("Hashed instruction sequence: %lld\n", LensLibrary::get());
+			printf("Lens values sum: %lld\n", LensLibrary::get2());
 			chosenDay = 0;
 		}
 		default:
