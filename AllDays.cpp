@@ -16,12 +16,13 @@
 #include "Day13/LavaIsland.h"
 #include "Day14/ParabolicReflector.h"
 #include "Day15/LensLibrary.h"
+#include "Day16/FloorLava.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 15;
+	int chosenDay = 16;
 	while (chosenDay >= 0)
 	{
 		//std::cin >> chosenDay;
@@ -148,10 +149,14 @@ int main()
 		}break;
 		case 15:
 		{
-			// printf("Hashed instruction sequence: %lld\n", LensLibrary::get());
+			printf("Hashed instruction sequence: %lld\n", LensLibrary::get());
 			printf("Lens values sum: %lld\n", LensLibrary::get2());
+		}break;
+		case 16:
+		{
+			printf("Beam coverage: %lld\n", FloorLava::get2());
 			chosenDay = 0;
-		}
+		}break;
 		default:
 		{
 			std::printf("That day isn't available yet! Check back later.\n");

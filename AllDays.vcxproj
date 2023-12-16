@@ -136,6 +136,7 @@
     <ClCompile Include="Day13\LavaIsland.cpp" />
     <ClCompile Include="Day14\ParabolicReflector.cpp" />
     <ClCompile Include="Day15\LensLibrary.cpp" />
+    <ClCompile Include="Day16\FloorLava.cpp" />
     <ClCompile Include="Day9\MirageMaintenance.cpp" />
     <ClCompile Include="Day1\Trebuchet.cpp" />
     <ClCompile Include="Day2\CubeConundrum.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Day13\LavaIsland.h" />
     <ClInclude Include="Day14\ParabolicReflector.h" />
     <ClInclude Include="Day15\LensLibrary.h" />
+    <ClInclude Include="Day16\FloorLava.h" />
     <ClInclude Include="Day9\MirageMaintenance.h" />
     <ClInclude Include="Day1\Trebuchet.h" />
     <ClInclude Include="Day2\CubeConundrum.h" />

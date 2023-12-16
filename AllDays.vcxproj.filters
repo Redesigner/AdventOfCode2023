@@ -75,6 +75,9 @@
     <ClCompile Include="Day15\LensLibrary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day16\FloorLava.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day2\CubeConundrum.h">
@@ -123,6 +126,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day15\LensLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day16\FloorLava.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
