@@ -17,12 +17,13 @@
 #include "Day14/ParabolicReflector.h"
 #include "Day15/LensLibrary.h"
 #include "Day16/FloorLava.h"
+#include "Day17/ClumsyCrucible.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 16;
+	int chosenDay = 17;
 	while (chosenDay >= 0)
 	{
 		//std::cin >> chosenDay;
@@ -38,75 +39,34 @@ int main()
 		{
 		case 1:
 		{
-			startTime = std::chrono::system_clock::now();
-			std::printf("Sum of first calibration values: %i\n", Trebuchet::get(false));
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
-
-			startTime = std::chrono::system_clock::now();
-			std::printf("Sum of second calibration values: %i\n", Trebuchet::get(true));
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+			printf("Sum of first calibration values: %i\n", Trebuchet::get(false));
+			printf("Sum of second calibration values: %i\n", Trebuchet::get(true));
 
 		}break;
 		case 2:
 		{
-			startTime = std::chrono::system_clock::now();
-			std::printf("Total IDs: %i\n", CubeConundrum::get_total_ids());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
-
-			std::printf("Power sum: %i\n", CubeConundrum::get_powers());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+			printf("Total IDs: %i\n", CubeConundrum::get_total_ids());
+			printf("Power sum: %i\n", CubeConundrum::get_powers());
 		}break;
 		case 3:
 		{
-			startTime = std::chrono::system_clock::now();
-			std::printf("Part numbers sum: %i\n", GearRatios::get());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
-
-			startTime = std::chrono::system_clock::now();
-			std::printf("Gear ratios sum: %i\n", GearRatios::getGears());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+			printf("Part numbers sum: %i\n", GearRatios::get());
+			printf("Gear ratios sum: %i\n", GearRatios::getGears());
 		}break;
 		case 4:
 		{
-			startTime = std::chrono::system_clock::now();
-			std::printf("Scratch cards value: %i\n", ScratchCards::get());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
-
-			startTime = std::chrono::system_clock::now();
-			std::printf("Scratch cards total: %i\n", ScratchCards::getCards());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+			printf("Scratch cards value: %i\n", ScratchCards::get());
+			printf("Scratch cards total: %i\n", ScratchCards::getCards());
 		}break;
 		case 5:
 		{
-			startTime = std::chrono::system_clock::now();
-			std::printf("Maps value: %lld\n", Fertilizer::get());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
-
-			startTime = std::chrono::system_clock::now();
-			std::printf("Maps value: %lld\n", Fertilizer::getRange());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
+			printf("Maps value: %lld\n", Fertilizer::get());
+			printf("Maps value: %lld\n", Fertilizer::getRange());
 		}
 		case 6:
 		{
-			startTime = std::chrono::system_clock::now();
 			printf("Race values %i\n", Races::get());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
-
-			startTime = std::chrono::system_clock::now();
 			printf("Single race value %i\n", Races::getPart2());
-			endTime = std::chrono::system_clock::now();
-			printf("Calculated values in %.3f ms\n", std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.f);
 		}break;
 		case 7:
 		{
@@ -154,7 +114,12 @@ int main()
 		}break;
 		case 16:
 		{
+			printf("Beam coverage: %lld\n", FloorLava::get());
 			printf("Beam coverage: %lld\n", FloorLava::get2());
+		}break;
+		case 17:
+		{
+			printf("Lowest heat loss: %lld\n", ClumsyCrucible::get());
 			chosenDay = 0;
 		}break;
 		default:

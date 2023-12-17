@@ -16,6 +16,8 @@ struct Vector2
 	int x;
 	int y;
 
+	bool insideBounds(int width, int height) const;
+
 	const bool operator==(const Vector2& otherVector) const;
 	Vector2 operator+(const Vector2& otherVector) const;
 	Vector2 operator-(const Vector2& otherVector) const;

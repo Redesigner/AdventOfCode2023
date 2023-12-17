@@ -30,6 +30,11 @@ bool Common::stringContains(std::string_view string, char c)
     return string.find(c) != std::string::npos;
 }
 
+bool Vector2::insideBounds(int width, int height) const
+{
+    return x >= 0 && x < width && y >= 0 && y < height;
+}
+
 const bool Vector2::operator==(const Vector2& otherVector) const
 {
     return x == otherVector.x && y == otherVector.y;

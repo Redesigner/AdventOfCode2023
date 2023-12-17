@@ -78,6 +78,9 @@
     <ClCompile Include="Day16\FloorLava.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day17\ClumsyCrucible.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day2\CubeConundrum.h">
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day16\FloorLava.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day17\ClumsyCrucible.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
