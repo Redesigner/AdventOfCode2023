@@ -4,11 +4,13 @@
 #include <string>
 #include <queue>
 
+#include "Block.h"
+
 using namespace std;
 
 int64_t ClumsyCrucible::get()
 {
-    bool usingExample = true;
+    bool usingExample = false;
 
     fstream file = usingExample ? fstream("Day17/test.txt", ios::in) : fstream("Day17/input.txt", ios::in);
     if (!file.is_open())
@@ -31,30 +33,58 @@ int64_t ClumsyCrucible::get()
         heatLossMap.emplace_back(heatLoss);
         mapPosition.y++;
     }
+    int height = heatLossMap.size();
+    int width = heatLossMap[0].size();
 
+    vector<QueueEntry> searchQueue;
 
-    queue<Block*> searchQueue;
-    searchQueue.emplace(&heatLossMap[0][0]);
-    heatLossMap[0][0].visited = true;
-    heatLossMap[0][0].distance = 0;
+    Block* startingBlock = &heatLossMap[0][0];
+    startingBlock->setDistance(startingBlock->cost, None, 0);
+    searchQueue.emplace_back(startingBlock, None, 0);
+
     while (!searchQueue.empty())
     {
-        Block* block = searchQueue.front();
-        searchQueue.pop();
-        for (Block* neighbor : block->getAdjacentBlocks(heatLossMap))
+        QueueEntry entry = searchQueue.front();
+        searchQueue.erase(searchQueue.begin());
+
+        Block* block = entry.block;
+        Direction direction = entry.direction;
+        int straight = entry.straight;
+        // block->visit(straight, direction);
+        vector<QueueEntry> neighbors = block->getAdjacentBlocks(heatLossMap, direction, straight);
+        for (QueueEntry& neighbor : neighbors)
         {
-            neighbor->setDistance(block->distance + neighbor->cost);
-            if (!neighbor->visited)
+            neighbor.block->setDistance(block->getDistance(direction, straight) + neighbor.block->cost, neighbor.direction, neighbor.straight);
+            if (!neighbor.block->visited(neighbor.straight, neighbor.direction))
             {
-                searchQueue.emplace(neighbor);
-                neighbor->visited = true;
+                neighbor.block->visit(neighbor.straight, neighbor.direction);
+                searchQueue.emplace_back(neighbor);
             }
         }
     }
 
-    printDistances(heatLossMap);
+    for (vector<Block>& line : heatLossMap)
+    {
+        for (Block& block : line)
+        {
+            int distance = block.getShortestDistance();
+            if (distance > 99)
+            {
+                printf("%i ", distance);
+            }
+            else if (distance > 9)
+            {
+                printf(" %i ", distance);
+            }
+            else
+            {
+                printf("  %i ", distance);
+            }
+        }
+        printf("\n");
+    }
 
-    int64_t distance = heatLossMap[heatLossMap.size() - 1][heatLossMap[0].size() - 1].distance;
+    int64_t distance = heatLossMap[heatLossMap.size() - 1][heatLossMap[0].size() - 1].getShortestDistance();
     if (usingExample)
     {
         if (distance != 102)
@@ -65,59 +95,24 @@ int64_t ClumsyCrucible::get()
     return distance;
 }
 
-
-ClumsyCrucible::Block::Block(char c, Vector2 position)
-    :position(position)
+bool ClumsyCrucible::contains(std::vector<QueueEntry>& entries, QueueEntry& entry)
 {
-    distance = -1;
-    cost = c - 48;
-}
-
-void ClumsyCrucible::Block::setDistance(int newDistance)
-{
-    if (distance < 0)
+    for (QueueEntry& oldEntry : entries)
     {
-        distance = newDistance;
-        return;
-    }
-    distance = min(newDistance, distance);
-}
-
-std::vector<ClumsyCrucible::Block*> ClumsyCrucible::Block::getAdjacentBlocks(std::vector<std::vector<Block>>& map)
-{
-    int width = map[0].size();
-    int height = map.size();
-    vector<Block*> result;
-    vector<Vector2> adjacentPositions = { position + Vector2(1, 0), position + Vector2(-1, 0), position + Vector2(0, 1), position + Vector2(0, -1) };
-    for (Vector2 adjacentPosition : adjacentPositions)
-    {
-        if (adjacentPosition.insideBounds(width, height))
+        if (entry == oldEntry)
         {
-            result.push_back(&map[adjacentPosition.y][adjacentPosition.x]);
+            return true;
         }
     }
-    return result;
+    return false;
 }
 
-void ClumsyCrucible::printDistances(vector<vector<Block>>& map)
+ClumsyCrucible::QueueEntry::QueueEntry(Block* block, Direction direction, int straight)
+    :block(block), direction(direction), straight(straight)
 {
-    for (vector<Block>& line : map)
-    {
-        for (Block& block : line)
-        {
-            if (block.distance > 99)
-            {
-                printf("%i ", block.distance);
-            }
-            else if (block.distance > 9)
-            {
-                printf(" %i ", block.distance);
-            }
-            else
-            {
-                printf("  %i ", block.distance);
-            }
-        }
-        printf("\n");
-    }
+}
+
+bool ClumsyCrucible::QueueEntry::operator==(const QueueEntry& other) const
+{
+    return (block == other.block) && (direction == other.direction) && (straight == other.straight);
 }

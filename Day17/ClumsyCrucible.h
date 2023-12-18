@@ -2,27 +2,25 @@
 
 #include <cstdint>
 #include <vector>
+#include <map>
 
 #include "../Common/Common.h"
 
+class Block;
 namespace ClumsyCrucible
 {
-	struct Block
+	struct QueueEntry
 	{
-		Block(char c, Vector2 position);
+		QueueEntry(Block* block, Direction direction, int straight);
 
-		void setDistance(int newDistance);
+		Direction direction;
+		int straight;
+		Block* block;
 
-		std::vector<Block*> getAdjacentBlocks(std::vector<std::vector<Block>>& map);
-
-		int distance;
-		int cost;
-		Vector2 position;
-		bool visited = false;
-		int numStraightMoves = 0;
+		bool operator==(const QueueEntry& other) const;
 	};
 
 	int64_t get();
 
-	void printDistances(std::vector<std::vector<Block>>& map);
+	bool contains(std::vector<QueueEntry>& entries, QueueEntry& entry);
 }

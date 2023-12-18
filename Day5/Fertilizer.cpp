@@ -77,7 +77,7 @@ int64 Fertilizer::get()
                 if (range.inSourceRange(seed))
                 {
                     seed = range.map(seed);
-                    // printf("Map %i: mapping seed to %i\n", i, seed);
+                    // printf("ExpandingMap %i: mapping seed to %i\n", i, seed);
                     mapped = true;
                 }
             }

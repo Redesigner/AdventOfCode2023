@@ -1,5 +1,4 @@
 #include <iostream>
-#include <chrono>
 
 #include "Day1/Trebuchet.h"
 #include "Day2/CubeConundrum.h"
@@ -18,23 +17,21 @@
 #include "Day15/LensLibrary.h"
 #include "Day16/FloorLava.h"
 #include "Day17/ClumsyCrucible.h"
+#include "Day18/LavaductLagoon.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 17;
+	int chosenDay = 18;
 	while (chosenDay >= 0)
 	{
-		//std::cin >> chosenDay;
+		std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
 			return 0;
 		}
-
-		std::chrono::system_clock::time_point startTime;
-		std::chrono::system_clock::time_point endTime;
 		switch (chosenDay)
 		{
 		case 1:
@@ -120,7 +117,11 @@ int main()
 		case 17:
 		{
 			printf("Lowest heat loss: %lld\n", ClumsyCrucible::get());
-			chosenDay = 0;
+		}break;
+		case 18:
+		{
+			printf("Filled area: %lld\n", LavaductLagoon::get());
+			printf("Filled area: %lld\n", LavaductLagoon::get2());
 		}break;
 		default:
 		{
