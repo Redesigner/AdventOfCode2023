@@ -18,15 +18,16 @@
 #include "Day16/FloorLava.h"
 #include "Day17/ClumsyCrucible.h"
 #include "Day18/LavaductLagoon.h"
+#include "Day19/Aplenty.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 18;
+	int chosenDay = 19;
 	while (chosenDay >= 0)
 	{
-		std::cin >> chosenDay;
+		// std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
@@ -122,6 +123,11 @@ int main()
 		{
 			printf("Filled area: %lld\n", LavaductLagoon::get());
 			printf("Filled area: %lld\n", LavaductLagoon::get2());
+		}break;
+		case 19:
+		{
+			printf("Part rating sum %lld\n", Aplenty::get2());
+			chosenDay = 0;
 		}break;
 		default:
 		{

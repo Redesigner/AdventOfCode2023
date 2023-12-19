@@ -87,6 +87,9 @@
     <ClCompile Include="Day18\LavaductLagoon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day19\Aplenty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day2\CubeConundrum.h">
@@ -147,6 +150,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day18\LavaductLagoon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day19\Aplenty.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -140,6 +140,7 @@
     <ClCompile Include="Day17\Block.cpp" />
     <ClCompile Include="Day17\ClumsyCrucible.cpp" />
     <ClCompile Include="Day18\LavaductLagoon.cpp" />
+    <ClCompile Include="Day19\Aplenty.cpp" />
     <ClCompile Include="Day9\MirageMaintenance.cpp" />
     <ClCompile Include="Day1\Trebuchet.cpp" />
     <ClCompile Include="Day2\CubeConundrum.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Day17\Block.h" />
     <ClInclude Include="Day17\ClumsyCrucible.h" />
     <ClInclude Include="Day18\LavaductLagoon.h" />
+    <ClInclude Include="Day19\Aplenty.h" />
     <ClInclude Include="Day9\MirageMaintenance.h" />
     <ClInclude Include="Day1\Trebuchet.h" />
     <ClInclude Include="Day2\CubeConundrum.h" />
