@@ -128,3 +128,45 @@ Vector2 Vector2::right()
 {
     return Vector2(1, 0);
 }
+
+int64_t Common::GCD(const int& a, const int& b)
+{
+    int64_t r02 = a;
+    int64_t r01 = b;
+    while (true)
+    {
+        int64_t remainder = r02 % r01;
+        if (remainder == 0)
+        {
+            return r01;
+        }
+        r02 = r01;
+        r01 = remainder;
+    }
+}
+
+int64_t Common::GCD(const std::vector<int>& values)
+{
+    if (values.size() <= 2)
+    {
+        return 0;
+    }
+    int64_t currentGCD = values[0];
+    for (const int value : values)
+    {
+        currentGCD = GCD(currentGCD, value);
+    }
+    return currentGCD;
+}
+
+int64_t Common::LCM(const std::vector<int>& values)
+{
+    int64_t valuesGCD = GCD(values);
+    int64_t result = 1;
+    for (int64_t value : values)
+    {
+        int64_t factor = value / valuesGCD;
+        result *= factor;
+    }
+    return result * valuesGCD;
+}

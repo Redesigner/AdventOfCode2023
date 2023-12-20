@@ -13,6 +13,10 @@ namespace Common
 
 	uint32_t hexStringToInt(std::string_view string);
 	char charToHex(char c);
+
+	int64_t GCD(const int& a, const int& b);
+	int64_t GCD(const std::vector<int>& values);
+	int64_t LCM(const std::vector<int>& values);
 }
 
 enum Direction

@@ -81,13 +81,16 @@
     <ClCompile Include="Day17\ClumsyCrucible.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Day17\Block.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Day18\LavaductLagoon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Day19\Aplenty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day20\PulsePropogation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day20\Module.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -146,13 +149,16 @@
     <ClInclude Include="Day17\ClumsyCrucible.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Day17\Block.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Day18\LavaductLagoon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day19\Aplenty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day20\PulsePropogation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day20\Module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

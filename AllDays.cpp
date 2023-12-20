@@ -19,15 +19,16 @@
 #include "Day17/ClumsyCrucible.h"
 #include "Day18/LavaductLagoon.h"
 #include "Day19/Aplenty.h"
+#include "Day20/PulsePropogation.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 19;
+	int chosenDay = 20;
 	while (chosenDay >= 0)
 	{
-		// std::cin >> chosenDay;
+		std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
@@ -126,8 +127,13 @@ int main()
 		}break;
 		case 19:
 		{
-			printf("Part rating sum %lld\n", Aplenty::get2());
-			chosenDay = 0;
+			printf("Part rating sum %lld\n", Aplenty::get());
+			printf("Accepted possible parts %lld\n", Aplenty::get2());
+		}break;
+		case 20:
+		{
+			printf("Pulses sent: %lld\n", PulsePropogation::get());
+			printf("Minimum button presses: %lld\n", PulsePropogation::get2());
 		}break;
 		default:
 		{
