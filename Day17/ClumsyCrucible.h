@@ -6,8 +6,10 @@
 
 #include "../Common/Common.h"
 
-class Block;
 namespace ClumsyCrucible
 {
+	class Node
+	{
+	};
 	int64_t get();
 }

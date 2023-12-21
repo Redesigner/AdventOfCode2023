@@ -20,15 +20,16 @@
 #include "Day18/LavaductLagoon.h"
 #include "Day19/Aplenty.h"
 #include "Day20/PulsePropogation.h"
+#include "Day21/StepCounter.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 20;
+	int chosenDay = 21;
 	while (chosenDay >= 0)
 	{
-		std::cin >> chosenDay;
+		// std::cin >> chosenDay;
 
 		if (chosenDay >= 25 || chosenDay <= 0)
 		{
@@ -134,6 +135,12 @@ int main()
 		{
 			printf("Pulses sent: %lld\n", PulsePropogation::get());
 			printf("Minimum button presses: %lld\n", PulsePropogation::get2());
+		}break;
+		case 21:
+		{
+			// printf("Possible destinations: %lld\n", StepCounter::get());
+			printf("Possible destinations: %lld\n", StepCounter::get2());
+			chosenDay = 0;
 		}break;
 		default:
 		{

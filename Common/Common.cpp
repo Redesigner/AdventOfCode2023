@@ -170,3 +170,8 @@ int64_t Common::LCM(const std::vector<int>& values)
     }
     return result * valuesGCD;
 }
+
+int Common::mod(int k, int n)
+{
+    return ((k %= n) < 0) ? k + n : k;
+}

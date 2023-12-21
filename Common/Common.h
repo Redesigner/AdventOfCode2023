@@ -17,6 +17,8 @@ namespace Common
 	int64_t GCD(const int& a, const int& b);
 	int64_t GCD(const std::vector<int>& values);
 	int64_t LCM(const std::vector<int>& values);
+
+	int mod(int k, int n);
 }
 
 enum Direction
