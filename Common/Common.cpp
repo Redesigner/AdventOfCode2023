@@ -72,6 +72,16 @@ const bool Vector2::operator==(const Vector2& otherVector) const
     return x == otherVector.x && y == otherVector.y;
 }
 
+bool Vector2::operator<(const Vector2& otherVector) const
+{
+    return lengthSquared() < otherVector.lengthSquared();
+}
+
+bool Vector2::operator>(const Vector2& otherVector) const
+{
+    return lengthSquared() > otherVector.lengthSquared();
+}
+
 Vector2 Vector2::operator+(const Vector2& otherVector) const
 {
     return Vector2(x + otherVector.x, y + otherVector.y);
@@ -90,6 +100,11 @@ Vector2 Vector2::operator*(const int scalar) const
 int64_t Vector2::cross(const Vector2& otherVector) const
 {
     return static_cast<int64_t>(x) * static_cast<int64_t>(otherVector.y) - static_cast<int64_t>(y) * static_cast<int64_t>(otherVector.x);
+}
+
+int Vector2::lengthSquared() const
+{
+    return x * x + y * y;
 }
 
 Vector2 Vector2::fromDirection(Direction direction)

@@ -161,7 +161,7 @@ int64_t HauntedWasteland::GCD(const std::vector<int>& values)
     int64_t currentGCD = values[0];
     for (const int value : values)
     {
-        currentGCD = GCD(currentGCD, value);
+        currentGCD = GCD(static_cast<int>(currentGCD), value);
     }
     return currentGCD;
 }

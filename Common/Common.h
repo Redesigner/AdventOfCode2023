@@ -38,10 +38,15 @@ struct Vector2
 	bool insideBounds(int width, int height) const;
 
 	const bool operator==(const Vector2& otherVector) const;
+	bool operator<(const Vector2& otherVector) const;
+	bool operator>(const Vector2& otherVector) const;
+
 	Vector2 operator+(const Vector2& otherVector) const;
 	Vector2 operator-(const Vector2& otherVector) const;
 	Vector2 operator*(const int scalar) const;
+
 	int64_t cross(const Vector2& otherVector) const;
+	int lengthSquared() const;
 
 	static Vector2 fromDirection(Direction direction);
 	static Vector2 up();
