@@ -144,6 +144,7 @@
     <ClCompile Include="Day20\PulsePropogation.cpp" />
     <ClCompile Include="Day21\StepCounter.cpp" />
     <ClCompile Include="Day22\SandSlabs.cpp" />
+    <ClCompile Include="Day23\LongWalk.cpp" />
     <ClCompile Include="Day9\MirageMaintenance.cpp" />
     <ClCompile Include="Day1\Trebuchet.cpp" />
     <ClCompile Include="Day2\CubeConundrum.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Day20\PulsePropogation.h" />
     <ClInclude Include="Day21\StepCounter.h" />
     <ClInclude Include="Day22\SandSlabs.h" />
+    <ClInclude Include="Day23\LongWalk.h" />
     <ClInclude Include="Day9\MirageMaintenance.h" />
     <ClInclude Include="Day1\Trebuchet.h" />
     <ClInclude Include="Day2\CubeConundrum.h" />
