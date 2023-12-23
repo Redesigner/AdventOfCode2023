@@ -281,36 +281,6 @@ Aplenty::Part::Part(std::string token)
     s = stoi(properties[3].substr(2, properties[3].size() - 2));
 }
 
-Aplenty::Range::Range(int start, int end)
-    :start(start), end(end)
-{
-}
-
-Aplenty::Range::Range()
-{
-    start = 0;
-    end = 0;
-}
-
-vector<Aplenty::Range> Aplenty::Range::split(int separator) const
-{
-    if (!inside(separator))
-    {
-        return { Range(start, end) };
-    }
-    return { Range(start, separator), Range(separator + 1, end) };
-}
-
-bool Aplenty::Range::inside(int value) const
-{
-    return value >= start && value <= end;
-}
-
-int Aplenty::Range::width() const
-{
-    return end - start + 1;
-}
-
 Aplenty::PartRange::PartRange(int start, int end, string destination)
     :destination(destination)
 {

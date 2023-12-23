@@ -54,3 +54,17 @@ struct Vector2
 	static Vector2 left();
 	static Vector2 right();
 };
+
+struct Range
+{
+	Range(int start, int end);
+	Range();
+
+	std::vector<Range> split(int separator) const;
+	std::vector<int> valuesInRange() const;
+	bool inside(int value) const;
+	int width() const;
+
+	int start = 0;
+	int end = 0;
+};

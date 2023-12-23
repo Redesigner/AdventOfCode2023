@@ -21,12 +21,13 @@
 #include "Day19/Aplenty.h"
 #include "Day20/PulsePropogation.h"
 #include "Day21/StepCounter.h"
+#include "Day22/SandSlabs.h"
 
 int main()
 {
 	std::printf("Welcome to the Advent of Code!\nPlease enter a number to see the solution for that day! (1 - 25)\n");
 
-	int chosenDay = 21;
+	int chosenDay = 22;
 	while (chosenDay >= 0)
 	{
 		// std::cin >> chosenDay;
@@ -140,6 +141,11 @@ int main()
 		{
 			// printf("Possible destinations: %lld\n", StepCounter::get());
 			printf("Possible destinations: %lld\n", StepCounter::get2());
+		}break;
+		case 22:
+		{
+			// printf("Removable blocks count: %lld\n", SandSlabs::get());
+			printf("Removable blocks dropped: %lld\n", SandSlabs::get2());
 			chosenDay = 0;
 		}break;
 		default:

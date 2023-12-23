@@ -190,3 +190,43 @@ int Common::mod(int k, int n)
 {
     return ((k %= n) < 0) ? k + n : k;
 }
+
+Range::Range(int start, int end)
+    :start(start), end(end)
+{
+}
+
+Range::Range()
+{
+    start = 0;
+    end = 0;
+}
+
+std::vector<Range> Range::split(int separator) const
+{
+    if (!inside(separator))
+    {
+        return { Range(start, end) };
+    }
+    return { Range(start, separator), Range(separator + 1, end) };
+}
+
+std::vector<int> Range::valuesInRange() const
+{
+    std::vector<int> result;
+    for (int i = start; i <= end; ++i)
+    {
+        result.emplace_back(i);
+    }
+    return result;
+}
+
+bool Range::inside(int value) const
+{
+    return value >= start && value <= end;
+}
+
+int Range::width() const
+{
+    return end - start + 1;
+}

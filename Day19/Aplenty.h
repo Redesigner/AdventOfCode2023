@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "../Common/Common.h"
+
 namespace Aplenty
 {
 	struct Part
@@ -56,19 +58,6 @@ namespace Aplenty
 		Destination finalDestination;
 		std::string jumpDestination;
 		std::vector<Rule> rules;
-	};
-
-	struct Range
-	{
-		Range(int start, int end);
-		Range();
-
-		std::vector<Range> split(int separator) const;
-		bool inside(int value) const;
-		int width() const;
-
-		int start = 0;
-		int end = 0;
 	};
 
 	struct PartRange
